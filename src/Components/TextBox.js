@@ -12,7 +12,6 @@ const TextBox = ({ placeholder, onChangeText, type }) => {
             onFocus={() => setOnFocus(true)}
             onBlur={() => setOnFocus(false)}
             onChangeText={e => onChangeText(e)}
-            textContentType={"telephoneNumber"}
 
         />
     )

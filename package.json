@@ -30,6 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "gh-pages": "^3.2.3",
     "webpack-hot-middleware": "^2.25.1"
   },
   "private": true,
