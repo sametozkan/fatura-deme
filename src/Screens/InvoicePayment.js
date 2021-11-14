@@ -17,55 +17,55 @@ const InvoicePayment = ({ flatlist }) => {
     const [number, setNumber] = useState("");
 
     const paymentInvoice = () => {
-        axios.post("InvoicePayment", {
-            header: {
-                AppKey: "a04cfa7a159b48e9f7d73fb92ef9b3b9",
-                Channel: "API",
-                ChannelSessionId: "Fatura ödene deneme 1",
-                ChannelRequestId: "Fatura ödene deneme 2",
-            },
-            Parameters: [
-                {
-                    SubDealerCode: "",
-                    AssociationCode: selectedAssociation,
-                    CustomerNo: 3488017,
-                    Amount: selectedAssociation.InvoiceAmount,
-                    InvoiceMessageBag: selectedInvoice,
-                    PaymentEntry: {
-                        AccountBranchCode: 9142,
-                        AccountNumber: 3488017,
-                        AccountSuffix: 357,
-                        CurrencyCode: "TRY",
-                        DealerCode: "",
-                        SubDealerCode: "",
-                    },
-                    SourceAccount: {
-                        CustomerNo: 3488017,
-                        BranchCode: 9142,
-                        AccountSuffix: 357,
-                        CurrencyCode: "TRY",
-                    }
+        // axios.post("InvoicePayment", {
+        //     header: {
+        //         AppKey: "a04cfa7a159b48e9f7d73fb92ef9b3b9",
+        //         Channel: "API",
+        //         ChannelSessionId: "Fatura ödene deneme 1",
+        //         ChannelRequestId: "Fatura ödene deneme 2",
+        //     },
+        //     Parameters: [
+        //         {
+        //             SubDealerCode: "",
+        //             AssociationCode: selectedAssociation,
+        //             CustomerNo: 3488017,
+        //             Amount: selectedAssociation.InvoiceAmount,
+        //             InvoiceMessageBag: selectedInvoice,
+        //             PaymentEntry: {
+        //                 AccountBranchCode: 9142,
+        //                 AccountNumber: 3488017,
+        //                 AccountSuffix: 357,
+        //                 CurrencyCode: "TRY",
+        //                 DealerCode: "",
+        //                 SubDealerCode: "",
+        //             },
+        //             SourceAccount: {
+        //                 CustomerNo: 3488017,
+        //                 BranchCode: 9142,
+        //                 AccountSuffix: 357,
+        //                 CurrencyCode: "TRY",
+        //             }
 
-                }
-            ]
-        })
-            .then(result => {
-                console.log(result)
-                if (result.data.Error) {
-                    console.log(result.data.Error)
-                    alert(result.data.Error.Description)
-                }
-                else {
-                    console.log(result.data.Data.Response)
-                }
+        //         }
+        //     ]
+        // })
+        //     .then(result => {
+        //         console.log(result)
+        //         if (result.data.Error) {
+        //             console.log(result.data.Error)
+        //             alert(result.data.Error.Description)
+        //         }
+        //         else {
+        //             console.log(result.data.Data.Response)
+        //         }
 
 
-            })
-        // flatlist.current.scrollToIndex({ animated: true, index: 4 })
-        // setScreenId(4)
-        // screens[4].pageName = "Ödeme başarılı"
-        // setScreens(screens);
-        // setResultStatus(2)
+        //     })
+        flatlist.current.scrollToIndex({ animated: true, index: 4 })
+        setScreenId(4)
+        screens[4].pageName = "Ödeme başarılı"
+        setScreens(screens);
+        setResultStatus(2)
     }
 
     return (
